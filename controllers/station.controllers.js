@@ -30,8 +30,29 @@ const getDetailStation = async (req, res) => {
   }
 };
 
+const updateStation = async (req, res) => {
+  const { id } = req.params;
+  const { name, address, province } = req.body;
+  try {
+    const stationDetail = await Station.findOne({ where: { id } });
+
+    if (stationDetail) {
+      stationDetail.name = name;
+      stationDetail.address = address;
+      stationDetail.province = province;
+      await stationDetail.save();
+      res.status(200).send(stationDetail);
+    } else {
+      res.status(500).send('NOT FOUND!');
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
 module.exports = {
   createStation,
   getAllStation,
   getDetailStation,
+  updateStation,
 };
