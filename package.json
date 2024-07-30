@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "final project with vexere",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
   "repository": "https://github.com/kiethohoai/ve-xe-re.git",
   "author": "kiethohoai <kietho.060193@gmail.com>",
   "license": "MIT",

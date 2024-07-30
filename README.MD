@@ -8,3 +8,4 @@ Bài 5 Project init
 - yard add  express mysql2 sequelize
 - yarn add sequelize-cli --dev
 - sequelize init
+Bài 6 Express sequelize
