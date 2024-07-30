@@ -13,3 +13,4 @@ Bài 7 Model migrate
 Bài 8 Crud station create
 Bài 9 Crud station read
 Bài 10 Crud station update
+Bài 11 Crud station delete

@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const { Station } = require('./../models');
 
 const createStation = async (req, res) => {
@@ -50,9 +51,20 @@ const updateStation = async (req, res) => {
   }
 };
 
+const deleteStation = async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Station.destroy({ where: { id } });
+    res.status(200).send('Delete Successfully!');
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
 module.exports = {
   createStation,
   getAllStation,
   getDetailStation,
   updateStation,
+  deleteStation,
 };
