@@ -10,3 +10,4 @@ Bài 5 Project init
 - sequelize init
 Bài 6 Express sequelize
 Bài 7 Model migrate
+Bài 8 Crud station create
