@@ -9,3 +9,4 @@ Bài 5 Project init
 - yarn add sequelize-cli --dev
 - sequelize init
 Bài 6 Express sequelize
+Bài 7 Model migrate
