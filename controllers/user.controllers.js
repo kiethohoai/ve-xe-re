@@ -23,7 +23,24 @@ const register = async (req, res) => {
   }
 };
 
+/* LOGIN
+  1 - Tìm ra user đang đăng nhập dựa trên Email?
+  2 - Kiểm tra mật khẩu có đúng hay không?
+  */
+const login = async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ where: { email } });
+  if (user) {
+    const isAuth = bcrypt.compareSync(password, user.password);
+    if (isAuth) res.status(200).send({ message: 'Login Successfully!' });
+    else res.status(500).send({ message: 'Incorrect User/Password!' });
+  } else {
+    res.status(404).send({message : "Not Found User!"})
+  }
+};
+
 // Export
 module.exports = {
   register,
+  login,
 };

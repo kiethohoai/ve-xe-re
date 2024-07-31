@@ -1,10 +1,10 @@
+// const { checkExist } = require('../middlewares/validations/checkExist');
 const express = require('express');
 const userRouter = express.Router();
-
-const { register } = require('../controllers/user.controllers');
-const { checkExist } = require('../middlewares/validations/checkExist');
+const { register, login } = require('../controllers/user.controllers');
 
 userRouter.post('/register', register);
+userRouter.post('/login', login);
 
 // userRouter.get('/', getAllStation);
 // userRouter.get('/:id', getDetailStation);
