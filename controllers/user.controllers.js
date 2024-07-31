@@ -1,6 +1,8 @@
-const { User } = require('../models');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const { User } = require('../models');
 
+/* REGISTER */
 const register = async (req, res) => {
   const { name, email, password, numberPhone } = req.body;
   try {
@@ -32,10 +34,23 @@ const login = async (req, res) => {
   const user = await User.findOne({ where: { email } });
   if (user) {
     const isAuth = bcrypt.compareSync(password, user.password);
-    if (isAuth) res.status(200).send({ message: 'Login Successfully!' });
-    else res.status(500).send({ message: 'Incorrect User/Password!' });
+
+    if (isAuth) {
+      const token = jwt.sign(
+        {
+          email: user.email,
+          type: user.type,
+        },
+        'ho-hoai-kiet-365',
+        { expiresIn: 60 * 60 },
+      );
+
+      res.status(200).send({ message: 'Login Successfully!', token });
+    } else {
+      res.status(500).send({ message: 'Incorrect User/Password!' });
+    }
   } else {
-    res.status(404).send({message : "Not Found User!"})
+    res.status(404).send({ message: 'Not Found User!' });
   }
 };
 

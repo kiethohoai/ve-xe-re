@@ -1,4 +1,5 @@
 // const { checkExist } = require('../middlewares/validations/checkExist');
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const userRouter = express.Router();
 const { register, login } = require('../controllers/user.controllers');
