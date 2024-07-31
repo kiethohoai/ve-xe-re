@@ -28,6 +28,7 @@ module.exports = {
       type: {
         type: Sequelize.STRING,
         allowNull: false,
+        defaultValue: 'client',
       },
       createdAt: {
         allowNull: false,

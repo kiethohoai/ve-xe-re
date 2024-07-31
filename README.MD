@@ -19,3 +19,5 @@ Bài 13 Validation sequelize
 Bài 14 Validation expressjs
 Bài 15 Seeder
 Bài 16 Model controllers routers users
+Bài 17 Register users with yarn add bcryptjs
+
