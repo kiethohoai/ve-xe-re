@@ -16,3 +16,4 @@ Bài 10 Crud station update
 Bài 11 Crud station delete
 Bài 12 Crud station read filter
 Bài 13 Validation sequelize
+Bài 14 Validation expressjs
