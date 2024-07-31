@@ -1,4 +1,4 @@
-const { where } = require('sequelize');
+const { where, Op } = require('sequelize');
 const { Station } = require('./../models');
 
 const createStation = async (req, res) => {
@@ -12,9 +12,23 @@ const createStation = async (req, res) => {
 };
 
 const getAllStation = async (req, res) => {
+  const { name } = req.query;
+  console.log('🚀CHECK  name =', name);
+
   try {
-    const stationList = await Station.findAll();
-    res.status(200).send(stationList);
+    if (name) {
+      const stationList = await Station.findAll({
+        where: {
+          name: {
+            [Op.like]: `%${name}%`,
+          },
+        },
+      });
+      res.status(200).send(stationList);
+    } else {
+      const stationList = await Station.findAll();
+      res.status(200).send(stationList);
+    }
   } catch (error) {
     res.status(500).send(error);
   }
