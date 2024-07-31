@@ -13,7 +13,6 @@ const createStation = async (req, res) => {
 
 const getAllStation = async (req, res) => {
   const { name } = req.query;
-  console.log('🚀CHECK  name =', name);
 
   try {
     if (name) {
