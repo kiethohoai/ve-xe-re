@@ -18,3 +18,4 @@ Bài 12 Crud station read filter
 Bài 13 Validation sequelize
 Bài 14 Validation expressjs
 Bài 15 Seeder
+Bài 16 Model controllers routers users
