@@ -33,3 +33,4 @@ Bài 27 Upload file mkdirp
 Bài 28 Gravatar
 Bài 29 Sequelize relationship station trip
 Bài 30 CRUD trip create
+Bài 31 CRUD trip read all

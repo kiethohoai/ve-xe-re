@@ -1,15 +1,11 @@
 const express = require('express');
 const tripRouter = express.Router();
 
-const { createTrip } = require('../controllers/trip.controllers');
-
-// const { Station } = require('../models');
-// const { checkExist } = require('../middlewares/validations/checkExist');
-// const { authenticate } = require('../middlewares/auth/authenticate');
-// const { authorize } = require('../middlewares/auth/authorize');
+const { createTrip, getAllTrip } = require('../controllers/trip.controllers');
 
 tripRouter.post('/', createTrip);
-// tripRouter.get('/', getAllStation);
+tripRouter.get('/', getAllTrip);
+
 // tripRouter.get('/:id', getDetailStation);
 // tripRouter.put('/:id', checkExist(Station), updateStation);
 // tripRouter.delete('/:id', checkExist(Station), deleteStation);
