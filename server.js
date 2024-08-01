@@ -1,9 +1,13 @@
 // const path = require('path');
 const express = require('express');
+const Fingerprint = require('express-fingerprint');
 const app = express();
 const port = 3000;
 const { sequelize } = require('./models/index');
 const { rootRouter } = require('./routes');
+
+// config Fingerprint
+app.use(Fingerprint());
 
 // config json
 app.use(express.json());
