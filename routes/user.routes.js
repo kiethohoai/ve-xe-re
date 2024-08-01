@@ -15,7 +15,21 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({
+  storage: storage,
+  fileFilter: function name(req, file, cb) {
+    const extensionImageList = ['jpg', 'png'];
+    const extension = file.originalname.slice(-3);
+    console.log('🚀CHECK  extension =', extension);
+
+    const check = extensionImageList.includes(extension);
+    if (check) {
+      cb(null, true);
+    } else {
+      cb(new Error('Invalid file name extensions'));
+    }
+  },
+});
 
 userRouter.post('/upload-avatar', upload.single('avatar'), (req, res) => {
   res.send('Upload File Image Successfully');
