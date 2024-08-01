@@ -5,7 +5,17 @@ const { register, login } = require('../controllers/user.controllers');
 
 // lib uploadfile
 const multer = require('multer');
-const upload = multer({ dest: './uploads/avatars' });
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/images/avatars');
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + '-' + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 userRouter.post('/upload-avatar', upload.single('avatar'), (req, res) => {
   res.send('Upload File Image Successfully');
