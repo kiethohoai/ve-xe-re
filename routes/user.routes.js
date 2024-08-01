@@ -9,7 +9,12 @@ const {
 const { uploadImage } = require('../middlewares/upload/upload-image');
 const { authenticate } = require('../middlewares/auth/authenticate');
 
-userRouter.post('/upload-avatar', authenticate, uploadImage(), uploadAvatar);
+userRouter.post(
+  '/upload-avatar',
+  authenticate,
+  uploadImage('user'),
+  uploadAvatar,
+);
 userRouter.post('/register', register);
 userRouter.post('/login', login);
 
