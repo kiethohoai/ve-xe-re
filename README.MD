@@ -30,3 +30,4 @@ Bài 24 Upload file filter
 Bài 25 Save path phần 1
 Bài 26 Save path phần 2
 Bài 27 Upload file mkdirp
+Bài 28 Gravatar

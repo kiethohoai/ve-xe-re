@@ -1,10 +1,15 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
+const gravatar = require('gravatar');
 
 /* REGISTER */
 const register = async (req, res) => {
   const { name, email, password, numberPhone } = req.body;
+
+  // Create default avatar
+  const avatarUrl = `https:${gravatar.url(email)}`;
+
   try {
     // Tao chuoi ma hoa
     const salt = bcrypt.genSaltSync(10);
@@ -17,6 +22,7 @@ const register = async (req, res) => {
       email,
       password: hashPassword,
       numberPhone,
+      avatar: avatarUrl,
     });
 
     res.status(201).send(newUser);
