@@ -55,11 +55,19 @@ const login = async (req, res) => {
 };
 
 const uploadAvatar = async (req, res) => {
+  // Tạo đường dẫn ảnh
+  const { file } = req;
+  const urlImage = `http://localhost:3000/${file.path}`;
+
+  // Tìm user chứa ảnh
   const { user } = req;
   const userFound = await User.findOne({
     email: user.email,
   });
 
+  // Save to DB
+  userFound.avatar = urlImage;
+  await userFound.save();
   res.send(userFound);
 };
 

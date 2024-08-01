@@ -9,7 +9,7 @@ const { rootRouter } = require('./routes');
 app.use(express.json());
 
 // config static files
-app.use(express.static(`${__dirname}/public`));
+app.use('/public', express.static(`${__dirname}/public`));
 // const publicPathDirectory = path.join(__dirname, './public');
 
 // config routes
