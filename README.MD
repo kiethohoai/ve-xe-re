@@ -37,4 +37,4 @@ Bài 31 CRUD trip read all
 Bài 32 CRUD trip delete update
 Bài 33 Postman variable
 Bài 34 Finger print
-Bài 34 Finger print
+Bài 35 Ticket migration
