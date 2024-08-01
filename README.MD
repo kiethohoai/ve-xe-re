@@ -31,3 +31,4 @@ Bài 25 Save path phần 1
 Bài 26 Save path phần 2
 Bài 27 Upload file mkdirp
 Bài 28 Gravatar
+Bài 29 Sequelize relationship station trip
