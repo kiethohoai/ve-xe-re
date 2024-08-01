@@ -4,8 +4,8 @@ const authenticate = (req, res, next) => {
   try {
     const token = req.header('token');
     const decode = jwt.verify(token, 'ho-hoai-kiet-365');
-    console.log('🚀CHECK  decode =', decode);
     if (decode) {
+      req.user = decode;
       return next();
     } else {
       res.status(401).send('You need to login to use this feature!');

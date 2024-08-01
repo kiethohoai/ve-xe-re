@@ -10,8 +10,15 @@ const {
 const { checkExist } = require('../middlewares/validations/checkExist');
 const { Station } = require('./../models');
 const { authenticate } = require('../middlewares/auth/authenticate');
+const { authorize } = require('../middlewares/auth/authorize');
 
-stationRouter.post('/', authenticate, createStation);
+// task
+stationRouter.post(
+  '/',
+  authenticate,
+  authorize(['admin', 'super_admin']),
+  createStation,
+);
 stationRouter.get('/', getAllStation);
 stationRouter.get('/:id', getDetailStation);
 stationRouter.put('/:id', checkExist(Station), updateStation);

@@ -22,3 +22,5 @@ Bài 16 Model controllers routers users
 Bài 17 Register users with yarn add bcryptjs
 Bài 18 Login users
 Bài 19 Token
+Bài 20 Authenticate
+Bài 21 Authorize
