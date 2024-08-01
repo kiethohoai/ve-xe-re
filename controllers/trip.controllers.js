@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const { Trip } = require('../models');
 const { Station } = require('../models');
 
@@ -31,7 +32,37 @@ const getAllTrip = async (req, res) => {
   else res.status(404).send('Not Found List of Trips');
 };
 
+// todo deleteTrip
+const deleteTrip = async (req, res) => {
+  const { id } = req.params;
+  await Trip.destroy({
+    where: {
+      id,
+    },
+  });
+
+  res.send(`Trip ${id} Deleted `);
+};
+
+// todo updateTrip
+const updateTrip = async (req, res) => {
+  const { id } = req.params;
+  const { startTime, price, fromStation, toStation } = req.body;
+
+  await Trip.update(
+    { startTime, price, fromStation, toStation },
+    {
+      where: {
+        id,
+      },
+    },
+  );
+  res.send(`Update TripID = ${id} Successfully!`);
+};
+
 module.exports = {
   createTrip,
   getAllTrip,
+  deleteTrip,
+  updateTrip,
 };
