@@ -40,4 +40,4 @@ Bài 34 Finger print
 Bài 35 Ticket migration
 Bài 36 Seeder data
 Bài 37 Query raw sequelize
-
+Bài 38 Anlytis project final
