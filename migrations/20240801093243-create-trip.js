@@ -11,6 +11,7 @@ module.exports = {
       },
       fromStation: {
         type: Sequelize.INTEGER,
+        allowNull: true,
         references: {
           model: 'stations',
           key: 'id',
@@ -18,6 +19,7 @@ module.exports = {
       },
       toStation: {
         type: Sequelize.INTEGER,
+        allowNull: true,
         references: {
           model: 'stations',
           key: 'id',

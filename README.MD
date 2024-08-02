@@ -38,3 +38,4 @@ Bài 32 CRUD trip delete update
 Bài 33 Postman variable
 Bài 34 Finger print
 Bài 35 Ticket migration
+Bài 36 Seeder data
