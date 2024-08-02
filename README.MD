@@ -39,3 +39,5 @@ Bài 33 Postman variable
 Bài 34 Finger print
 Bài 35 Ticket migration
 Bài 36 Seeder data
+Bài 37 Query raw sequelize
+

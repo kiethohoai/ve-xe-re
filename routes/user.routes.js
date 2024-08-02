@@ -5,6 +5,7 @@ const {
   register,
   login,
   uploadAvatar,
+  getAllTrip,
 } = require('../controllers/user.controllers');
 const { uploadImage } = require('../middlewares/upload/upload-image');
 const { authenticate } = require('../middlewares/auth/authenticate');
@@ -17,6 +18,9 @@ userRouter.post(
 );
 userRouter.post('/register', register);
 userRouter.post('/login', login);
+
+// test
+userRouter.get('/all-trip', getAllTrip);
 
 // userRouter.get('/', getAllStation);
 // userRouter.get('/:id', getDetailStation);
